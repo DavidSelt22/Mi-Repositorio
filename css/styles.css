@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oxygen:300,400');
+@import url('reset.css');
+@import url('fontello.css');
+
+@font-face {
+	font-family: 'Melbourne-Reg';
+	src: url('../fonts/Melbourne/Melbourne_reg.otf');
+}
+
+.clear {
+	clear: both;
+}
+
+.foto {
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+}
+
+#portada {
+	background: url('../img/nuevaPortada.png');
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+
+/* INICIO ESTILOS */
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	header {
+		width: 100%;
+		height: 100px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01525f+0,089da7+64,089da7+100 */
+		background: rgb(1, 82, 95);
+		/* Old browsers */
+		background: -webkit-linear-gradient(rgba(1, 82, 95, 1) 0%, rgba(8, 157, 167, 1) 64%, rgba(8, 157, 167, 1) 100%);
+		background: -o-linear-gradient(rgba(1, 82, 95, 1) 0%, rgba(8, 157, 167, 1) 64%, rgba(8, 157, 167, 1) 100%);
+		background: linear-gradient(rgba(1, 82, 95, 1) 0%, rgba(8, 157, 167, 1) 64%, rgba(8, 157, 167, 1) 100%);
+		/* FF3.6-15 */
+		/* Chrome10-25,Safari5.1-6 */
+		/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#01525f', endColorstr='#089da7', GradientType=0);
+		/* IE6-9 */
+		color: #fff;
+		/*position: fixed;/*quede pegado*/
+		top: 0;
+		left: 0;
+		/*z-index:100;/*quede por arriba*/
+	}
+
+	.contenedor {
+		/*de toda la pagina*/
+		width: 98%;
+		margin: auto;
+	}
+
+	#logotipo {
+		float: left;
+		margin: 0px 20px;
+	}
+
+	#logotipo .logo {
+		margin-top: 6px;
+	}
+
+	header .contenedor {
+		display: table;
+		/*para limpiar los float y qie quede encajado en la caja*/
+	}
+
+	h1 {
+		text-align: center;
+		font-family: Oxygen;
+		font-size: 38px;
+		font-weight: 400;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	#amarilla {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8b480+0,ffffdc+47,c8b480+100 */
+		background: rgb(200, 180, 128);
+		/* Old browsers */
+		background: -moz-linear-gradient(top, rgba(200, 180, 128, 1) 0%, rgba(255, 255, 220, 1) 47%, rgba(200, 180, 128, 1) 100%);
+		/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(200, 180, 128, 1) 0%, rgba(255, 255, 220, 1) 47%, rgba(200, 180, 128, 1) 100%);
+		/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(200, 180, 128, 1) 0%, rgba(255, 255, 220, 1) 47%, rgba(200, 180, 128, 1) 100%);
+		/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#c8b480', endColorstr='#c8b480', GradientType=0);
+		/* IE6-9 */
+		width: 100%;
+		margin: auto;
+	}
+
+	footer {
+		width: 100%;
+		text-align: left;
+		background: #726239;
+		padding: 3px;
+		box-sizing: border-box;
+	}
+
+	footer p {
+		font-family: Oxygen;
+		font-size: 12px;
+		color: #fff;
+		padding: 7px;
+	}
+
+/* FIN ESTILOS */
+
+/* INICIO MENU */
+	#menu-bar{
+		display: none;
+	}
+
+	header label{
+		float: right;
+		font-size: 34px;
+		margin: 25px 0px;
+		cursor: pointer;
+	}
+
+	.menu{
+		position: absolute;
+		top: 100px;
+		left:0;
+		width:100%;
+		height:39vh;
+		background: rgba(33,154,163,0.9);
+		transition: all 0.5s;
+		transform: translateX(-100%);
+	}
+
+	.menu a{
+		font-family: Melbourne-Reg;
+		font-size: 20px;
+		text-align: center;
+		display: block;
+		color: #fff;
+		height: 50px;
+		text-decoration: none;
+		padding: 15px;
+		
+	}
+
+	.menu a:hover{
+		background:rgba(255,255,255,0.3); 
+	}
+
+	#menu-bar:checked ~ .menu{
+		transform: translateX(0%);
+	}
+
+	@media(min-width: 1024px){
+		.menu{
+			position: static;/*como esta en absolute, para que se valla se usa static*/
+			width: auto;
+			height: auto;
+			transform: translateX(0%);
+			float: left;
+			display: flex;
+			margin: 20px;
+			background: none;
+		}
+		
+		.menu a{
+			font-size: 25px;
+			border: none;
+			box-sizing: border-box;
+		}
+
+		.menu a:hover{
+			color: #E1E81E;
+			transition: all .5s;
+			background: none;
+		}
+
+		header label{
+			display: none;
+		}
+	}
+
+/* FIN MENU */
+
+/* INICIO AMARILLA */
+	#amarilla .contenedorA{/*Es el contenido amarillo |	|*/
+		width: 97%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#Res-Serv .contenedorResServ{/*Parte de reseñas y servicios */
+		/*border: 3px solid #333;
+		box-sizing: border-box;*/
+		display: flex;
+		/*justify-content: center;*/
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding-bottom: 40px;
+	}
+
+	#Res-Serv article{
+		/*width:40%;*//*le cambie de 49% a 40%*/
+		/*min-width: 430px;*/
+	}
+
+	.Res h2{
+		font-family: Oxygen;
+		font-weight: normal;	
+		text-align: left;
+		margin: auto;
+		min-width: 430px;
+	}
+
+	.Serv h2{
+		font-family: Oxygen;
+		font-weight: normal;
+		text-align: left;
+	}
+
+	.Res p{
+		margin: auto;
+		margin-top: 2px;
+		width: 430px;
+		min-width: 430px;
+		text-align: justify;
+		font-family: Oxygen;
+
+	}
+
+	.Serv,.Res{
+		/*min-width: 430px;
+		margin: 0px 53px;
+		border: 3px solid #333;
+		box-sizing: border-box;*/
+		margin: 0 20px;
+	}
+
+	.Serv nav ul li{
+		/*border: 3px solid #333;
+		box-sizing: border-box;*/
+		width: 410px;	
+		min-width: 410px;
+		
+		padding: 0px 5px;
+		margin-top: 7px;
+	}
+
+	.Serv nav ul{
+		padding: 0px 24px;
+		list-style-image: url('../img/FlechaMin.png');
+	}
+
+	@media (max-width: 480px) {
+		#Res-Serv .contenedorResServ {
+			display: block;
+		}
+
+		.Serv {
+			margin: 20px;
+		}
+
+		.Serv nav ul li {
+			max-width: 100%;
+			min-width: unset;
+		}
+
+		.Res p {
+			min-width: unset;
+			width: auto;
+		}
+	}
+
+	@media (min-width: 480px){
+		/*#Res-Serv article{
+			width: 25%;le cambie de 49% a 40%
+			min-width: 430px;
+		}*/
+		
+		.Res h2{
+			/*margin-left: 9px;*/
+		}
+
+		.Res p{
+			justify-content: center;
+			padding:10px 0;
+			width:410px;
+		}
+
+		.Serv{
+			/*margin-top: 20px;*/
+			padding: 0;
+		}
+
+		hr{
+			border: solid 5px #fff;
+			width:80%;
+			margin: auto; 
+		}
+	}
+
+	@media (min-width: 768px){
+		hr{
+			border: solid 5px #000;
+			width:70%;
+			margin: auto;
+		}
+	}
+
+	@media (min-width:1024px){
+		hr{
+			border: solid 5px #000;
+			width:76%;
+			margin: auto;
+		}
+	}
+
+	hr{
+		background: #000;
+		border: none !important;
+		height: 1px;
+	}
+
+/* FIN AMARILLA */
+
+/* INICIO FOTOS */
+	.fotost {
+		color: #000;
+		text-align: center;
+		font-family: Oxygen;
+		font-size: 25px;
+		font-weight: 300;
+		height: 70px;
+	}
+
+	.galeria {
+		width: 82%;
+		margin: auto;
+		list-style: none;
+		padding: 20px;
+		box-sizing: border-box;
+		/*Para que no agrege espacio con el padding*/
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		/*que se ajuste al entorno*/
+		margin-bottom: 5px;
+	}
+
+	.galeria li {
+		margin: 5px;
+	}
+
+	.galeria img {
+		width: 130px;
+		height: 130px;
+		margin: 10px;
+	}
+
+	/*Estilos del modal*/
+
+	.modal {
+		display: none;
+		z-index: 100;
+	}
+
+	.modal:target {
+		display: block;
+		position: fixed;
+		background: rgba(26, 147, 146, 0.8);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.modal h1 {
+		color: #fff;
+		font-size: 30px;
+		text-align: center;
+		margin: 15px;
+	}
+
+	.imagen {
+		width: 80%;
+		height: 80%;
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+		/*el contenido tiene que estar en el centro*/
+		align-items: center;
+		/*las flechas*/
+	}
+
+	.imagen a {
+		color: #fff;
+		font-size: 40px;
+		text-decoration: none;
+		margin: 10px;
+	}
+
+	.imagen a:nth-child(2) {
+		/*Estoy en la segunta etiqueta a*/
+		margin: 0;
+		height: 100%;
+		flex-shrink: 2;
+		/*es para que la foto no me empuje las flechas hacia los lados*/
+	}
+
+	.imagen img {
+		background: rgba(0,0,0,0.6);
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
+		border: 7px solid #fff;
+		box-sizing: border-box;
+	}
+
+	.exit {
+		width: 100%;
+	}
+
+	.cerrar {
+		margin-left: 1170px;
+		margin-top: 0px;
+		display: block;
+		background: #000;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 20px;
+		font-family: Open Sans;
+		font-weight: bold;
+		color: #fff;
+		margin-bottom: 0px;
+		padding: 1px;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		line-height: 16px;
+	}
+
+	/*------------------------------------------------------*/
+
+	@media (min-width: 480px) {
+		.cerrar {
+			margin: 30px auto;
+			margin-top: 50px;
+			display: block;
+			background: #000;
+			width: 25px;
+			height: 25px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 20px;
+			font-family: Open Sans;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: 4px;
+			padding: 1px;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			line-height: 16px;
+		}
+		.imagen {
+			width: 80%;
+			height: 65%;
+			margin: auto;
+			display: flex;
+			justify-content: center;
+			/*el contenido tiene que estar en el centro*/
+			align-items: center;
+			/*las flechas*/
+		}
+	}
+
+	@media (max-width: 700px) {
+		.galeria {
+			width: 100%;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.cerrar {
+			margin: 30px auto;
+			margin-top: 60px;
+			display: block;
+			background: #000;
+			width: 25px;
+			height: 25px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 20px;
+			font-family: Open Sans;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: 4px;
+			padding: 1px;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			line-height: 16px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.cerrar {
+			margin: 30px auto;
+			margin-top: 50px;
+			display: block;
+			background: #000;
+			width: 25px;
+			height: 25px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 20px;
+			font-family: Open Sans;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: 4px;
+			padding: 1px;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			line-height: 16px;
+		}
+		.imagen {
+			width: 80%;
+			height: 80%;
+			margin: auto;
+			display: flex;
+			justify-content: center;
+			/*el contenido tiene que estar en el centro*/
+			align-items: center;
+			/*las flechas*/
+		}
+	}
+
+/* FIN FOTOS */
+
+/* INICIO RESERVAS */
+
+	/*#fondo {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+	}*/
+
+	#fondo {
+		background: url('../img/Foto_42.jpg');
+		background-size: cover;
+		padding: 15vh 0;
+		position: relative;
+		width: 100%;
+	}
+
+	/*form {
+		top: 50%;
+		left: 80%;
+		transform: translateX(-80%) translateY(-50%);
+		position: absolute;
+		width: 450px;
+		margin: auto;
+		background: rgba(211, 211, 211, 0.7);
+		padding: 10px 20px;
+		box-sizing: border-box;
+	}*/
+
+	form {
+		background: rgba(211, 211, 211, 0.7);
+		box-sizing: border-box;
+		margin: 0 12vw 0 auto;
+		padding: 10px 20px;
+		width: 450px;
+	}
+
+	.res {
+		font-family: Open Sans;
+		font-weight: bold;
+		text-shadow: 2px 0px 3px #000;
+		color: #fff;
+		text-align: center;
+		margin: 0;
+		font-size: 40px;
+		/*font-stretch: 5px;*/
+		margin-bottom: 20px;
+	}
+
+	.titulo {
+		margin-bottom: 10px;
+		font-family: Open Sans;
+		font-weight: 600;
+		font-size: 20px;
+		color: #3b4045;
+	}
+
+	input, textarea {
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 7px;
+		box-sizing: border-box;
+		font-size: 17px;
+		border: none;
+	}
+
+	input[placeholder], textarea[placeholder] {
+		font-style: italic;
+	}
+
+	textarea {
+		min-height: 100px;
+		max-height: 200px;
+		max-width: 100%
+	}
+
+	input[type="submit"] {
+		background: #50575e;
+		color: #fff;
+		width: 25%;
+		margin-bottom: 0;
+		/*Margen del boton sin borde*/
+		font-size: 16px;
+		font-family: Open Sans;
+		font-weight: 600;
+		float: right;
+	}
+
+	input[type="submit"]:hover {
+		/*cuando paso el cursor se modifica*/
+		background: #626D78;
+		cursor: pointer;
+		/*Modifico el cursor*/
+		color: #fff;
+	}
+
+
+	/*--------------------------------------------------------*/
+
+	@media (max-width: 480px) {
+		form {
+			/*display: flex;
+			justify-content: center;
+			flex-wrap: wrap;*/
+			width: 100%;
+			min-width: 100%;
+		}
+		/*.titulo {
+			margin-bottom: 10px;
+			font-family: Open Sans;
+			font-weight: bold;
+			font-size: 25px;
+			color: #333;
+		}*/
+	}
+
+	/*@media (max-width:1024px) {
+		form {
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			position: absolute;
+			width: 450px;
+			margin: auto;
+			background: rgba(211, 211, 211, 0.7);
+			padding: 10px 20px;
+			box-sizing: border-box;
+		}
+	}*/
+
+	@media (max-width: 600px) {
+		form {
+			margin: 0 auto;
+		}
+	}
+
+/* FIN RESERVAS */
+
+/* INICIO CONTACTO-NUEVO */
+
+	#contacto {
+		background: linear-gradient(to bottom, rgba(111, 97, 56, 1) 0%, rgba(184, 159, 100, 1) 43%, rgba(184, 159, 100, 1) 43%, rgba(184, 159, 100, 1) 48%);
+		width: 100%;
+	}
+
+	#contacto-container {
+		align-items: center;
+		display: flex;
+		width: 100%;
+	}
+
+	#contacto-info {
+		flex: 36;
+		padding: 30px;
+		padding-left: 0;
+	}
+
+	#contacto-info h2, #contacto-info p {
+		font-family: Oxygen, Open Sans, sans-serif;
+		font-weight: normal;
+	}
+
+	#contacto-info h2 {
+		font-size: 2em;
+	}
+
+	#contacto-info p {
+		font-size: 1em;
+		margin: 10px 0;
+	}
+
+	#mapa {
+		flex: 64;
+		padding: 30px;
+	}
+
+	@media (max-width: 700px) {
+		#contacto-container {
+			display: block;
+		}
+		#contacto-info {
+			padding: 30px;
+			padding-top: 0;
+		}
+	}
+
+/* FIN CONTACTO-NUEVO */
+
+/* INICIO VISOR FOTOS */
+
+	#visor-fotos {
+		align-items: center;
+		background-color: rgba(0,0,0,.6);
+		display: none;
+		height: 100vh;
+		justify-content: center;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 200;
+	}
+
+	#visor-container {
+		display: flex;
+	}
+
+	#visor-close {
+		color: #fff;
+		cursor: pointer;
+		font-size: 36px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+
+	.box-arrow {
+		align-self: center;
+		text-align: center;
+		width: 32px;
+	}
+
+	.box-arrow img {
+		cursor: pointer;
+		height: auto;
+		width: auto;
+	}
+
+	#box-image {
+		background-color: #E3D9AD;
+		border: 7px solid #FFF;
+		/*max-height: 80vh;
+		max-width: 80vw;*/
+	}
+
+	#box-image img {
+		height: auto;
+		max-height: 80vh;
+		max-width: 80vw;
+		width: auto;
+	}
+
+/* FIN VISOR FOTOS */
+
+/*TELEFONO PPAL.*/
+elemento{
+    display: none;
+}
+#mobile-phone {
+	display: block;
+	position: fixed;
+	bottom: 5px;
+	width: 400px;
+	left: 50%;
+	text-align: center;
+	font-family: 'Squada One', cursive;
+    color:white; 
+	background-repeat: repeat-x;
+	font-size: 1.5em;
+	padding: 1em 0;
+	border-top: 1px solid #64FBFF;
+	border-left: 1px solid #64FBFF;
+	border-right: 1px solid #015A62;
+	border-bottom: 1px solid #015A62;
+	background: url(../Fotos/index.png);
+	box-shadow: 0 0 10px 4px rgba(0,0,0,.5);
+	margin-left: -200px;
+	
+}
+#mobile-phone a{
+	color: #fff;
+}
+
+
+
+@media  (max-width: 480px) {
+	#mobile-phone {
+		/*display: none;*/
+		position: fixed;
+		bottom: 1px;
+		text-align: center;
+		font-family: 'Squada One', cursive;
+		background: url(../Fotos/index.png);
+		color:white;
+		background-repeat: repeat-x;
+		
+		width: 80%;
+		left: 10%;
+		font-size: 1.5em;
+		padding: 1em 0;
+		margin-left: auto;
+	}
+}
